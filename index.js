@@ -1,15 +1,5 @@
-const fs = require('fs');
+const mdLinks = require('./components/mdLinks.js')
 const path = require('path');
 
-
-module.exports = function mdLinks(ruta, callback) {
-    fs.readdir(ruta, (err, list) => {
-        if (err) {
-            return callback(err, null);
-        } else {
-            callback(null, list)
-        }
-    })
-}
-
-
+mdLinks(process.argv[2]) 
+    
