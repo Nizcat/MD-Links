@@ -7,10 +7,9 @@ module.exports = function readingFile(file) {
         if (err) {
             return (err, null);
         } else {
-          const regex = /^(.*)\[(.+)\]\(([A-Za-z0-9\:\/\. ]+)(\"(.+)\")?\)(.*)$/g;
-          const aLink = data.slice(regex);
+            let url = data.match(/\bhttps?:\/\/\S+/gi);
           console.log("----------------------");
-          console.log(aLink, "este es un link, valido?");
+          console.log(url, "este es un link, valido?");
 
 
 
