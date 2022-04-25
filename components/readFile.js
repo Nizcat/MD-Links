@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const colors = require('colors');
 const readUrl = require('./getUrl.js')
 
 module.exports = function readingFile(file) {
@@ -9,10 +10,10 @@ module.exports = function readingFile(file) {
         } else {
             let urlString = data.match(/\bhttps?:\/\/\S+/gi);
             let urltoFetch = new URL(data.match(/\bhttps?:\/\/\S+/gi));
-                console.log(urlString.forEach(url => {
+                urlString.forEach(url => {
                     let indexText = data.indexOf(url);
-                    console.log([url], indexText, file);
-                }));    
+                    console.log([file, url, data.slice(indexText-50, indexText)]);                    
+                });    
            
             
           /* readUrl(UrL); */
