@@ -9,14 +9,17 @@ module.exports = function readingFile(file) {
             return (err, null);
         } else {
             let urlString = data.match(/\bhttps?:\/\/\S+/gi);
-            let urltoFetch = new URL(data.match(/\bhttps?:\/\/\S+/gi));
+            console.log(urlString);
+            /* let urltoFetch = new URL(data.match(/\[(?<text>.+)\]\((?<url>[^ ]+)\)/)); */
                 urlString.forEach(url => {
                     let indexText = data.indexOf(url);
-                    console.log([file, url, data.slice(indexText-50, indexText)]);                    
+                    const eachUrl = {
+                        "href": url,
+                        "text": data.slice(indexText-50, indexText),
+                        "file": file,
+                    }
+                    console.log(eachUrl);                    
                 });    
-           
-            
-          /* readUrl(UrL); */
         }
     })
 }
