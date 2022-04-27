@@ -10,13 +10,17 @@ module.exports = function readingFile(file) {
     /* let urltoFetch = new URL(data.match(/\[(?<text>.+)\]\((?<url>[^ ]+)\)/)); */
     urlString.forEach(url => {
         let indexText = data.indexOf(url);
-        const eachUrl = {
-            "href": url,
-            "text": data.slice(indexText - 50, indexText),
-            "file": file,
+        if (url.match(/https*?:([^"')\s]+)/) != null) {
+            const eachUrl = {
+                "href": url.match(/https*?:([^"')\s]+)/)[0],
+                "text": data.slice(indexText - 50, indexText),
+                "file": file,
+            }
+            arrayUrl.push(eachUrl);
         }
-        arrayUrl.push(eachUrl);
+        
     });
-    return arrayUrl;
+   /*  readUrl(arrayUrl); */
+   return arrayUrl
 }
 
