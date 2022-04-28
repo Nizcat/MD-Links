@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const colors = require('colors');
-const readUrl = require('./getUrl.js')
+const readUrl = require('./validate.js')
 
 module.exports = function readingFile(file) {
     const arrayUrl = []
