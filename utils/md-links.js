@@ -11,11 +11,13 @@ module.exports = function mdLinks(ruta, opt) {
       resolve(readingFile(path.resolve(ruta)));
     } else if (path.extname(ruta) == ".md" && opt === "true") {
       resolve(readUrl(readingFile(path.resolve(ruta))))
-    } else {
+    } else if (fs.lstatSync(ruta).isDirectory() === true) {
       recursive(path.resolve(ruta)).forEach(element => {
-        mdLinks(path.resolve(path.join(ruta, element)));
+        mdLinks(path.resolve(path.join(ruta, element)), opt);
       });
-    }
+    } else {
+      reject("ERROR")
+  }
   })
 }
 
