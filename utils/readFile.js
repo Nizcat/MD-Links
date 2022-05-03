@@ -4,10 +4,8 @@ const colors = require('colors');
 const readUrl = require('./validate.js')
 
 module.exports = function readingFile(file) {
-    console.log(typeof file);
     const arrayUrl = []
     if (typeof file === "string") {
-        console.log("es un archivo");
         const data = fs.readFileSync(file).toString()
         let urlString = data.match(/\bhttps?:\/\/\S+/gi || /\bhttp?:\/\/\S+/gi);
         /* let urltoFetch = new URL(data.match(/\[(?<text>.+)\]\((?<url>[^ ]+)\)/)); */

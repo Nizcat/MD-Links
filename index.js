@@ -1,7 +1,7 @@
 const mdLinks = require('./utils/md-links.js')
 
 const options = {
-    validate : "false",
+    validate : "true",
 }
 
 mdLinks(process.argv[2], options.validate)
