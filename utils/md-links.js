@@ -13,7 +13,7 @@ module.exports = function mdLinks(ruta, opt) {
     } else if (path.extname(ruta) == ".md" && opt === "true") {
       resolve(readUrl(readingFile(path.resolve(ruta))))
     } else if (fs.lstatSync(ruta).isDirectory() === true) {
-      console.log(recursive(path.resolve(ruta), container), "logueo de recursive")
+      resolve (readingFile(recursive(path.resolve(ruta), container)))
     } else {
       reject("ERROR")
   }

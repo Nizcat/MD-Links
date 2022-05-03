@@ -5,11 +5,11 @@ const options = {
 }
 
 mdLinks(process.argv[2], options.validate)
-/* .then((thing) =>{
+.then((thing) =>{
     console.log(thing, "enindex");
 })
 .catch((error) =>{
     console.log(error, "enindex");
 })
-  */
+ 
     
