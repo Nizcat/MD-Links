@@ -2,10 +2,6 @@ const mdLinks = require("../utils/md-links.js");
 const getUrlObject = require('../utils/readFile.js')
 const recursive = require('../utils/recursive.js')
 const validateUrlObject = require('../utils/validate.js')
-const readme = require('../files/ReadMe.md')
-
-
-
 
 describe('mdLinks', () => {
 
