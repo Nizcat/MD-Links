@@ -4,7 +4,6 @@ const mdLinks = require("../utils/md-links.js");
 const unique = require("../utils/unique.js");
 const yargs = require("yargs")
 
-
 if (!yargs.argv.stats && !yargs.argv.validate) {
     mdLinks(process.argv[2], false, false)
         .then((thing) => {
