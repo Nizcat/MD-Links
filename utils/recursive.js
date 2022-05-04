@@ -18,9 +18,10 @@ module.exports = function recursive(ruta) {
 
   } else if (fs.lstatSync(ruta).isDirectory() && !null) {
     readAdir(ruta).forEach(element => {
-      recursive(path.join(ruta, element), "logueaelcontenido en forma de rutas");
+      recursive(path.join(ruta, element));
 
     })
   }
+  
   return container;
 }
