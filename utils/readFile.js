@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 const colors = require('colors');
-const readUrl = require('./validate.js')
+const validateUrlObject = require('./validate.js')
 
 
 
-module.exports = function readingFile(file) {
+module.exports = function getUrlObject(file) {
     const arrayUrl = []
     if (typeof file === "string") {
         const data = fs.readFileSync(file).toString()

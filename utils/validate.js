@@ -5,7 +5,7 @@ var request = require('sync-request');
 const okUrls = []
 const failedUrls = []
 
-module.exports = function readUrl(urlPath) {
+module.exports = function validateUrlObject(urlPath) {
     const arrayUrls = []
     console.log("Espera un momento, por favor");
     let i = 0;
