@@ -4,6 +4,7 @@ const mdLinks = require("../utils/md-links");
 const yargs = require("yargs")
 
 
+console.log("soy mdlinks");
 if (!yargs.argv.stats && !yargs.argv.validate) {
     mdLinks(process.argv[2], false, false)
         .then((thing) => {
