@@ -11,7 +11,6 @@ module.exports = function validateUrlObject(urlPath) {
     let i = 0;
     do {
         let res = request('GET', urlPath[i].href);
-        /* console.log('statusCode:', res.statusCode, urlPath[i].href); */
         if (res.statusCode > 399) {
             urlPath[i].status = res.statusCode;
             urlPath[i].ok = "fail";
