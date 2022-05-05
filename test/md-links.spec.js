@@ -1,7 +1,7 @@
 const mdLinks = require("../utils/md-links.js");
-const getUrlObject = require('../utils/readFile.js')
-const recursive = require('../utils/recursive.js')
-const validateUrlObject = require('../utils/validate.js')
+const pathFile = require('./mockData.js')
+const arrayUrls = require('./mockData')
+
 
 describe('mdLinks', () => {
 
@@ -9,33 +9,22 @@ describe('mdLinks', () => {
     expect(typeof mdLinks).toBe('function');
   });
 
-});
+  test('resolves an array of Urls', () => {
+    return mdLinks('../../ReadMe.md').then(data => {
+      expect(data).toEqual(expect.objectContaining(arrayUrls));
+    });
+  }); 
+  /* test('recived an array of Urls', () => {
+    return mdLinks('../../ReaMe.md').then(data => {
+      expect(typeof data).rejects.toBe([]);
+    });
+  }); */
 
-describe('getUrlObject', () => {
-
-  it('is a function', () => {
-    expect(typeof getUrlObject).toBe('function');
-  });
-  it('matches even if received includes more text', () => {
-    expect(readme).toEqual(expect.arrayContaining(arrayUrls));
-  });
-
-});
-
-describe('recursive', () => {
-
-  it('is a function', () => {
-    expect(typeof recursive).toBe('function');
-  });
 
 });
 
-describe('validateUrlObject', () => {
 
-  it('is a function', () => {
-    expect(typeof validateUrlObject).toBe('function');
-  });
 
-});
+
 
 
