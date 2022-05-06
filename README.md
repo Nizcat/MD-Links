@@ -302,8 +302,8 @@ siguiente interfaz:
 
 ##### Argumentos
 
-* `path`: Ruta **absoluta** o **relativa** al **archivo** o **directorio**.
-Si la ruta pasada es relativa, debe resolverse como relativa al directorio
+* `path`: pathF **absoluta** o **relativa** al **archivo** o **directorio**.
+Si la pathF pasada es relativa, debe resolverse como relativa al directorio
 desde donde se invoca node - _current working directory_).
 * `options`: Un objeto con **únicamente** la siguiente propiedad:
   - `validate`: Booleano que determina si se desea validar los links
@@ -319,13 +319,13 @@ Con `validate:false` :
 
 * `href`: URL encontrada.
 * `text`: Texto que aparecía dentro del link (`<a>`).
-* `file`: Ruta del archivo donde se encontró el link.
+* `file`: pathF del archivo donde se encontró el link.
 
 Con `validate:true` :
 
 * `href`: URL encontrada.
 * `text`: Texto que aparecía dentro del link (`<a>`).
-* `file`: Ruta del archivo donde se encontró el link.
+* `file`: pathF del archivo donde se encontró el link.
 * `status`: Código de respuesta HTTP.
 * `ok`: Mensaje `fail` en caso de fallo u `ok` en caso de éxito.
 
@@ -370,9 +370,9 @@ $ md-links ./some/example.md
 ```
 
 El comportamiento por defecto no debe validar si las URLs responden ok o no,
-solo debe identificar el archivo markdown (a partir de la ruta que recibe como
+solo debe identificar el archivo markdown (a partir de la pathF que recibe como
 argumento), analizar el archivo Markdown e imprimir los links que vaya
-encontrando, junto con la ruta del archivo donde aparece y el texto
+encontrando, junto con la pathF del archivo donde aparece y el texto
 que hay dentro del link (truncado a 50 caracteres).
 
 #### Options
@@ -591,7 +591,7 @@ que no encuentres problemas más adelante.
 ### Lee un archivo
 
 Como primer reto, puedes tratar de leer un solo archivo con
-una ruta fija e imprimir su contenido en la consola con un `console.log`.
+una pathF fija e imprimir su contenido en la consola con un `console.log`.
 
 La librería nativa `FS` (FileSystem) te será de utilidad.
 
@@ -614,13 +614,13 @@ Intenta imprimir en consola la lista de archivos en una carpeta.
 
 La librería `FS` también te será útil aquí.
 
-### Une dos rutas
+### Une dos pathFs
 
 Para poder acceder a carpetas y archivos será necesario que
 indiques en qué lugar de tu computadora se encuentran, a esto
-le llamamos **rutas**.
+le llamamos **pathFs**.
 
-Usa la librería nativa `path` para unir dos segmentos de ruta,
+Usa la librería nativa `path` para unir dos segmentos de pathF,
 por ejemplo, si queremos unir:
 
 1) /home/Laboratoria/
@@ -638,7 +638,7 @@ Este proyecto se ha de resolver de forma casi natural con
 Porque no conocemos realmente cuantas carpetas y archivos
 tendremos que recorrer antes de terminar.
 
-Si recibes una ruta de carpeta, no sabrás de ante mano si
+Si recibes una pathF de carpeta, no sabrás de ante mano si
 dentro hay más carpetas o muchos archivos.
 
 Por ello, asegurate bien de entender de qué trata la
