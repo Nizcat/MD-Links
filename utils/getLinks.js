@@ -28,7 +28,6 @@ module.exports = function getUrlObject(file) {
         do {
             const data = fs.readFileSync(file[i]).toString()
             let urlString = data.match(/\bhttps?:\/\/\S+/gi || /\bhttp?:\/\/\S+/gi);
-            /* let urltoFetch = new URL(data.match(/\[(?<text>.+)\]\((?<url>[^ ]+)\)/)); */
             urlString.forEach(url => {
                 let indexText = data.indexOf(url);
                 if (url.match(/https*?:([^"')\s]+)/) != null) {

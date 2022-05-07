@@ -1,24 +1,29 @@
 const fs = require('fs');
+const { builtinModules } = require('module');
 const path = require('path');
 
 const container = []
 const trash = []
-function readAdir(ruta) {
-  if (fs.lstatSync(ruta).isDirectory()) {
-    const fileList = fs.readdirSync(ruta)
+
+function readAdir(pathF) {
+  const checkingDir = fs.lstatSync(pathF).isDirectory();
+  if (checkingDir) {
+    const fileList = fs.readdirSync(pathF)
     return fileList
-  } else {
-    trash.push(ruta)
   }
 }
 
-module.exports = function recursive(ruta) {
-  if (path.extname(ruta) === ".md" && !null) {
-    container.push(ruta);
-  } else if (fs.lstatSync(ruta).isDirectory() && !null) {
-    readAdir(ruta).forEach(element => {
-      recursive(path.join(ruta, element));
+function recursive(pathF) {
+  const checkingFile = fs.lstatSync(pathF).isDirectory();
+  if (path.extname(pathF) === ".md" && !null) {
+    container.push(pathF);
+  } else if (checkingFile && !null) {
+    readAdir(pathF).forEach(element => {
+      recursive(path.join(pathF, element));
     })
   }
   return container;
 }
+
+module.exports = recursive, readAdir;
+

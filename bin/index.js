@@ -85,6 +85,8 @@ if (!yargs.argv.stats && !yargs.argv.validate) {
         .catch((error) => {
             console.log(error);
         })
-}
+} 
+ 
+   
 
 

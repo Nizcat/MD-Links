@@ -1,0 +1,2 @@
+Globals In your test files, Jest puts each of these methods and objects into the global environment. You don'to ve to require or import https://jestjs.io/docs/api anything to use them. However, if you prefer explicit imports, you can do import {describe, expect, test} from @jest/globals.
+https://jestjs.io/docs/api
