@@ -7,7 +7,6 @@ const failedUrls = []
 
 module.exports = function validateUrlObject(urlPath) {
     const arrayUrls = []
-    console.log("Espera un momento, por favor");
     let i = 0;
     do {
         let res = request('GET', urlPath[i].href);
