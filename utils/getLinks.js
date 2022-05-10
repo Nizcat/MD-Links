@@ -22,6 +22,7 @@ module.exports = function getUrlObject(file) {
                 arrayUrl.push(eachUrl);
             }
         });
+        
         return arrayUrl
     } else {
         let i = 0;
